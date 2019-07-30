@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "kr.yi.spms.dao.SpmsDao">
+	<select id="selectList" resultType="Spms">
+		select * from spms order by sp_no desc
+	</select>
+	<select id="selectListPage" resultType="Spms">
+		select * from spms order by sp_no desc 
+		limit #{startRow},#{size}
+	</select>
+	
+	<select id="selectTotalCount" resultType="int">
+		select count(sp_no) from spms
+	</select>
+	
+</mapper>
+
+
+
