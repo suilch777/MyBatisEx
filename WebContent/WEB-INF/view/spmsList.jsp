@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+
+*{
+	margin: 0 auto;
+}
 	table{
-		width:800px;
+		margin-top: 50px;
+		width:960px;
+		border: blue;
 		border-collapse: collapse;
 	}
 	tr:first-child td{
@@ -16,7 +23,7 @@
 		color:blue;
 	}
 	td:FIRST-CHILD{
-		width:20px;
+		width:30px;
 	}
 	td:last-child{
 		text-align: center;
@@ -27,6 +34,11 @@
 		text-overflow:ellipsis;
 		white-space:nowrap; 
 		overflow: hidden;
+	}
+	.content{
+	 width:250px; 
+	word-break:break-all;
+	
 	}
 	.page_wrap a{
 		text-decoration: none;
@@ -47,10 +59,10 @@
 </style> 
 </head>
 <body>
-	<table border="1">		
+	<table border="1" >		
 		<tr>
 			<td colspan="6">
-				<a href="${pageContext.request.contextPath }/spms/write.do">[게시글 쓰기]</a>
+				<a href="${pageContext.request.contextPath }/spms/write.do">[프로젝트등록]</a>
 			</td>
 		</tr>
 		<tr>
@@ -65,11 +77,11 @@
 		<tr>
 			<td>${spms.sp_no}</td>
 			<td class="title">
-				<a href="read.do?no=${spms.sp_name}">${spms.sp_name}</a>
+				<a href="read.do?no=${spms.sp_no}">${spms.sp_name}</a>
 			</td>
-			<td>${spms.content}</td>
-			<td>${spms.startdate}</td>
-			<td>${spms.enddate}</td>
+			<td class="content">${spms.content}</td>
+			<td><fmt:formatDate pattern="yyyy-MM-dd" value="${spms.startdate}"/> </td>
+			<td><fmt:formatDate pattern="yyyy-MM-dd" value="${spms.enddate}"/></td>
 			<td>${spms.status}</td>
 		</tr>
 		</c:forEach>

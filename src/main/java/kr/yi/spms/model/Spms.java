@@ -16,6 +16,12 @@ public class Spms {
 	}
 
 
+	public Spms(int sp_no) {
+		super();
+		this.sp_no = sp_no;
+	}
+
+
 	public Spms(int sp_no, String sp_name, String content, Date startdate, Date enddate, String status) {
 		super();
 		this.sp_no = sp_no;

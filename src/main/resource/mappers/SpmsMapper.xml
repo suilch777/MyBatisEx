@@ -15,6 +15,21 @@
 		select count(sp_no) from spms
 	</select>
 	
+	<select id="selectBySpmsNo" resultType="spms">
+	select * from spms where sp_no = #{sp_no}
+	</select>
+	
+	<delete id="deleteSpms">
+	delete from spms where sp_no = #{sp_no}
+	</delete>
+	
+	<insert id="insertSpms" >
+	INSERT INTO spms
+	( sp_name, content, startdate, enddate, status)
+		values
+		(#{sp_name}, #{content}, #{startdate}, #{enddate},  #{status})
+	
+	</insert>
 </mapper>
 
 
