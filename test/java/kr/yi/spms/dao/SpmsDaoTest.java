@@ -12,8 +12,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import kr.yi.spms.model.Spms;
-import kr.yi.spms.model.SpmsPage;
 import kr.yi.spms.util.MySqlSessionFactory;
+
+
 
 public class SpmsDaoTest {
 
